@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Keerthana Suresh — Portfolio</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#7c3aed;--muted:#9aa4b2;--glass: rgba(255,255,255,0.03)}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef8;background:linear-gradient(180deg,#071029 0%,#071828 100%)}
+    .container{max-width:900px;margin:48px auto;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;box-shadow:0 6px 30px rgba(3,7,18,0.6)}
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:100px;height:100px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--glass);font-size:36px;font-weight:700;color:var(--accent)}
+    h1{margin:0;font-size:28px}
+    p.lead{margin:6px 0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:20px}
+    .card{background:var(--card);padding:18px;border-radius:10px}
+    ul{margin:0;padding-left:18px}
+    .contact{word-break:break-all}
+    .btn-row{display:flex;gap:10px;margin-top:14px}
+    a.btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:880px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">KS</div>
+      <div>
+        <h1>Keerthana Suresh</h1>
+        <p class="lead">BSc Data Science — Sri Krishna Arts and Science College (SKASC)</p>
+        <p class="lead">Certificates: Google — GenAI; Google — Prompt Engineering</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main class="card">
+        <h2>About</h2>
+        <p>Hello — I'm Keerthana, a BSc Data Science student at SKASC. I enjoy working with data, learning generative AI tools, and exploring prompt engineering techniques to build practical solutions.</p>
+
+        <h3 style="margin-top:14px">Education</h3>
+        <p>SKASC — BSc Data Science</p>
+
+        <h3 style="margin-top:14px">Certificates</h3>
+        <ul>
+          <li>Google — GenAI</li>
+          <li>Google — Prompt Engineering</li>
+        </ul>
+
+        <h3 style="margin-top:14px">Skills (examples)</h3>
+        <ul>
+          <li>Data analysis & visualization</li>
+          <li>Python (pandas, numpy)</li>
+          <li>Prompt design for generative AI</li>
+        </ul>
+
+      </main>
+
+      <aside class="card">
+        <h3>Contact</h3>
+        <p class="contact">Email: <a href="mailto:keerthanasuresh24bds027@skasc.ac.in">keerthanasuresh24bds027@skasc.ac.in</a></p>
+
+        <div class="btn-row" style="margin-top:12px">
+          <a class="btn btn-primary" href="mailto:keerthanasuresh24bds027@skasc.ac.in">Email Me</a>
+          <a class="btn btn-secondary" href="#" onclick="window.print();return false;">Print</a>
+        </div>
+
+        <h4 style="margin-top:18px">Quick Export</h4>
+        <p class="muted" style="color:var(--muted);font-size:13px">Use the download button below to save this portfolio as an HTML file.</p>
+        <div style="margin-top:10px">
+          <a class="btn btn-primary" id="downloadBtn">Download HTML</a>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      Generated portfolio • Keerthana Suresh
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('downloadBtn').addEventListener('click', function(){
+      const html = '<!doctype html>' + document.documentElement.innerHTML;
+      const blob = new Blob([html], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Keerthana_Portfolio.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>
